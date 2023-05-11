@@ -8,12 +8,23 @@
     <style>
         input{
             text-align: left;
+            background-color: rgba(255, 242, 0, 0.573);
         }
-        
+        fieldset{
+            width: 400px;
+            margin:auto;
+            border:2px solid rgba(0, 0, 0, 0.73) ;
+            background-color: rgba(255, 255, 0, 0.257);
+        }
+        legend{
+            color: rgb(0, 0, 0);
+            font-size: 50px;
+            background-color: rgba(255, 255, 0, 0.573);
+        }
     </style>
 </head>
 <body>
-<form action="cadastro.php">
+<form action="cadastro.php" method="post">
     <fieldset>
         <legend>Dados Pessoais</legend>
         <p><label for="inome">Nome:</label>
@@ -26,7 +37,7 @@
         <p><label for="idia">Dia da prova:</label>
             <input type="date" name="dia" id="idia" value="2020-07-14">
         </p>
-        <p><label for="ihora">horário da prova:</label>
+        <p><label for="ihora">Horário da prova:</label>
             <input type="time" name="hora" id="ihora">
         </p>
         <p><input type="submit" value="enviar"><input type="reset" value="apagar"></p>
@@ -49,7 +60,40 @@
         <input type="checkbox" name="ten" id="iten">
         <label for="iten">Tenis</label>
 
-    </fieldset>    
+    </fieldset>  
+    <fieldset>
+        <legend>Endereço</legend>
+        <p>
+            <label for="iestado">Estado</label>
+            <select name="estado" id="iestado">
+                <optgroup label="Região Sul">
+                    <option value="RS">Rio grande do Sul</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="PA">Paraná</option>
+                </optgroup>
+                <optgroup label="Região Sudeste">
+                    <option value="RJ">Rio de janeiro</option>
+                    <option value="SP">São Paulo</option>
+                </optgroup>
+            </select>
+        </p>
+        <p>
+            <label for="ipro">Profissão</label>
+            <input type="text" name="pro" id="ipro" list="lis">
+            <datalist id="lis">
+                <option value="Pro">Professor</option>
+                <option value="Med">Médico</option>
+            </datalist>
+        </p>
+        <p>
+            <label for="img">Mensagem:</label><br>
+            <textarea name="msd" id="img" cols="30" rows="5" maxlength="30"></textarea>
+        </p>
+        <p>
+            <label for="imag">Envie um arquivo</label>
+            <input type="file" name="img" id="imag">
+        </p>
+    </fieldset>  
 </form>
 </body>
 </html>
